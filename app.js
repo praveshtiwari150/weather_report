@@ -4,10 +4,6 @@ const form = document.querySelector("form")
 const weather = document.querySelector("#weather");
 const search = document.querySelector("#search");
 
-// const api= `https://api.openweathermap.org/data/2.5/weather?`;
-
-// const img_url = `https://openweathermap.org/img/wn/$data.weather[0].icon}@2x.png`;
-
 const getWeather = async(city) => {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=metric`;
     const response = await fetch(url);
@@ -20,7 +16,7 @@ const showWeather = (data) =>{
         weather.innerHTML = `<h2>City Not Found</h2>`;
         return;
     }
-    console.log(data);
+
     weather.innerHTML = `
         <div>
             <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">
